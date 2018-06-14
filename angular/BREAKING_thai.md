@@ -62,9 +62,9 @@ await actionSheet.present();
 
 ## Alert
 
-The `title` and `subTitle` properties has been renamed to `header` and `subHeader` respectivelly.
+ค่า `title` และ `subTitle` เปลี่ยนชื่อเป็น `header` และ `subHeader` ตามลำดับ
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```js
 const alert = await alertCtrl.create({
@@ -74,7 +74,7 @@ const alert = await alertCtrl.create({
 await alert.present();
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```js
 const alert = await alertCtrl.create({
@@ -87,9 +87,9 @@ await alert.present();
 
 ## Back Button
 
-The back button is no longer added by default to a navigation bar. It should be explicitly written in a toolbar:
+ปุ่มย้อนกลับ (Back Button) จะไม่ถูกใส่ให้ใน Navigation Bar อัตโนมัติแล้ว แต่เราต้องกำหนดเอง
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-navbar>
@@ -97,7 +97,7 @@ The back button is no longer added by default to a navigation bar. It should be 
 </ion-navbar>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-toolbar>
@@ -108,15 +108,15 @@ The back button is no longer added by default to a navigation bar. It should be 
 </ion-toolbar>
 ```
 
-See the [back button documentation](https://github.com/ionic-team/ionic/blob/master/core/src/components/back-button) for more usage examples.
+ดูตัวอย่างการใช้งานเพิ่มเติมได้ใน [back button documentation](https://github.com/ionic-team/ionic/blob/master/core/src/components/back-button) 
 
 ## Button
 
 ### Markup Changed
 
-Button should now be written as an `<ion-button>` element. Ionic will determine when to render an anchor tag based on the presence of an `href` attribute.
+ปุ่มสามารถกำหนดได้โดยใช้ `<ion-button>` แทน `<button>` แบบเดิม. Ionic จะพิจารณาแสดงผลเป็น link ปกติ จากการกำหนดค่า `href` ดังตัวอย่าง
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <button ion-button (click)="doSomething()">
@@ -128,7 +128,7 @@ Button should now be written as an `<ion-button>` element. Ionic will determine 
 </a>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-button (click)="doSomething()">
@@ -140,9 +140,9 @@ Button should now be written as an `<ion-button>` element. Ionic will determine 
 </ion-button>
 ```
 
-### Attributes Renamed
+### Attributes ที่มีการเปลี่ยนชื่อ
 
-Previously to style icons inside of a button the following attributes were used: `icon-left`, `icon-right`, (and with the added support of RTL) `icon-start`, `icon-end`.
+ก่อนหน้านี้ เรากำหนดตำแหน่งของ Icon ในปุ่มของเราด้วยชื่อ attribute อย่างเข่น `icon-left`, `icon-right`, `icon-start`, `icon-end`.
 
 These have been renamed to the following, and moved from the button element to the icon itself:
 
@@ -162,7 +162,7 @@ The `small` and `large` attributes are now combined under the `size` attribute. 
 | `full`, `block`             | `expand`     | Sets the button width.      |
 
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-button icon-left>
@@ -198,7 +198,7 @@ The `small` and `large` attributes are now combined under the `size` attribute. 
 </ion-button>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-button>
@@ -228,9 +228,10 @@ The `small` and `large` attributes are now combined under the `size` attribute. 
 
 ### Markup Changed
 
-Buttons inside of an `<ion-chip>` container should now be written as an `<ion-chip-button>` element. Ionic will determine when to render an anchor tag based on the presence of an `href` attribute.
+ปุ่มที่ใส่ไว้ใน `<ion-chip>` จะต้องถูกเขียนใหม่เป็น `<ion-chip-button>` 
+โดย Ionic จะพิจารณาแสดงผลเป็น link ปกติ จากการกำหนดค่า `href` ดังตัวอย่าง
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-chip>
@@ -241,7 +242,7 @@ Buttons inside of an `<ion-chip>` container should now be written as an `<ion-ch
 </ion-chip>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-chip>
@@ -253,9 +254,9 @@ Buttons inside of an `<ion-chip>` container should now be written as an `<ion-ch
 ```
 
 
-## Colors
+## สีใน Ionic: Colors
 
-The default Ionic theme colors have changed. Previously we had:
+ค่าเริ่มต้นจองธีมสี มีการปรับปรุงอีกครั้ง จากแบบเดิมคือ
 
 ```
 primary:         #327eff
@@ -265,7 +266,7 @@ light:           #f4f4f4
 dark:            #222
 ```
 
-Some of their values have changed and we now include more colors by default:
+ตอนนี้เปลี่ยนใหม่ แถม มีเพิ่มมาให้ด้วย
 
 ```
 primary:         #3880ff
@@ -279,20 +280,22 @@ medium:          #989aa2
 dark:            #222428
 ```
 
-The `secondary` color saw the largest change. If you were previously using our `secondary` color we recommend switching to `success` instead.
+สีรองอย่าง `secondary` จะเปลี่ยนไปมากที่สุด หากมีการกำหนดใช้สีกลุ่ม `secondary` เราแนะนำให้เปลี่ยนเป็น `success` แทน
 
 
 ## Datetime
 
-The Datetime classes and interfaces have changed capitalization from `DateTime` to `Datetime`. This is more consistent with other components and their tags.
+ชื่อคลาส  Datetime และ interface เปลี่ยนจากตัวพิมพ์ใหญ่ในคำว่า `Time` (ใน `DateTime`) to `Datetime`. ซึ่งจะทำให้ชื่อเหมือนกับกลุ่ม component อื่นๆ ไม่ดูแปลกแยกอีกต่อไป 
 
-**Old Usage Example:**
+(พล: แล้วตอนแรกใครตั้งมา?! ก้มหน้า migrate ต่อไป) 
+
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```javascript
 import { DateTime } from 'ionic-angular';
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```javascript
 import { Datetime } from 'ionic-angular';
@@ -308,9 +311,9 @@ Components are no longer able to have their mode changed dynamically. You can ch
 
 ### Markup Changed
 
-Buttons inside of an `<ion-fab>` container should now be written as an `<ion-fab-button>` element. Ionic will determine when to render an anchor tag based on the presence of an `href` attribute.
+ปุ่มที่อยู่ใน `<ion-fab>` ควรเขียนใหม่เป็น จาก `<button ion-fab>` เป็น `<ion-fab-button>` . Ionic จะพิจารณาแสดงผลเป็น link ปกติ จากการกำหนดค่า `href` ดังตัวอย่าง
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-fab top right edge>
@@ -334,7 +337,7 @@ Buttons inside of an `<ion-fab>` container should now be written as an `<ion-fab
 </ion-fab>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-fab vertical="top" horizontal="end" edge>
@@ -360,14 +363,14 @@ Buttons inside of an `<ion-fab>` container should now be written as an `<ion-fab
 
 ### Attributes Renamed
 
-The mutually exclusive boolean attributes to position the fab have been combined into two single string attributes.
+ค่า Booleans ที่ไว้กำหนดการวางตำแหน่งของปุ่ม fab จะถูกรวมเป็น attribute เพียง 2 ชื่อ เพื่อให้อ่านง่ายขึ้น
 
-The attributes to align the fab horizontally are now combined under the `horizontal` attribute and the attributes to align the fab vertically are now combined under the `vertical` attribute:
+ค่า attibutes ที่ใช้ในการวางตำแหน่งแนวนอน ถูกรวมเป็นค่า attribute ที่ชื่อว่า `horizontal` และค่า attibutes ที่ใช้ในการวางตำแหน่งแนวตั้ง ถูกรวมเป็นค่า attribute ที่ชื่อว่า `vertical`:
 
-| Old Property | New Property         | Property Behavior                                                       |
+| ชื่อ Property เก่า | ชื่อ Property ใหม่        | Property Behavior                                                       |
 |--------------|----------------------|-------------------------------------------------------------------------|
-| left         | Removed              |                                                                         |
-| right        | Removed              |                                                                         |
+| left         | ลบออก              |                                                                         |
+| right        | ลบอกก              |                                                                         |
 | center       | `horizontal="center"`| Positions to the center of the viewport.                                |
 | start        | `horizontal="start"` | Positions to the left of the viewport in LTR, and to the right in RTL.  |
 | end          | `horizontal="end"`   | Positions to the right of the viewport in LTR, and to the left in RTL.  |
@@ -375,9 +378,9 @@ The attributes to align the fab horizontally are now combined under the `horizon
 | bottom       | `vertical="bottom"`  | Positions at the bottom of the viewport.                                |
 | middle       | `vertical="center"`  | Positions at the center of the viewport.                                |
 
-_Note that `middle` has been changed to `center` for the vertical positioning._
+_เพิ่มเติมว่า ค่า `middle` จะถูกเรียกใหม่เป็น `center` สำหรับการจัดวางในแนวดิ่ง_
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-fab top right edge>
@@ -389,7 +392,7 @@ _Note that `middle` has been changed to `center` for the vertical positioning._
 </ion-fab>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-fab vertical="top" horizontal="end" edge>
@@ -403,9 +406,9 @@ _Note that `middle` has been changed to `center` for the vertical positioning._
 
 ## Fixed Content
 
-The `<ion-fab>` container was previously placed inside of the fixed content by default. Now, any fixed content should use the `fixed` slot.
+ในเวอร์ชั่นก่อนหน้านี้ container ของ `<ion-fab>`  จะถูกวางในไว้ในส่วนที่ลอยอยู่เหนือ component อื่นเป็นค่าเริ่มต้น (เรียกว่า fixed content). ในเวอร์ชั่นนี้ และเวอร์ชั่นต่อไป เราต้องกำหนดค่า slot เป็น `fixed` โดยตรง
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-content>
@@ -416,7 +419,7 @@ The `<ion-fab>` container was previously placed inside of the fixed content by d
 </ion-content>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-fab vertical="top" horizontal="end" edge slot="fixed">
@@ -435,7 +438,7 @@ Icons have been refactored to use SVGs instead of fonts. Ionic will only fetch t
 
 If any `CSS` is being overridden for an icon it will need to change to override the SVG itself. Below is a usage example of the differences in changing the icon color.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```css
 .icon {
@@ -443,7 +446,7 @@ If any `CSS` is being overridden for an icon it will need to change to override 
 }
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```css
 .icon {
@@ -459,13 +462,13 @@ The `isActive` property has been removed. It only worked for `ios` icons previou
 
 The Sass variables were all renamed from having `$text-input` as the prefix to `$input`.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```css
 $text-input-highlight-color-valid:       #32db64;
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```css
 $input-highlight-color-valid:       #32db64;
@@ -478,7 +481,7 @@ $input-highlight-color-valid:       #32db64;
 
 Item should now be written as an `<ion-item>` element. Ionic will determine when to render an anchor tag based on the presence of an `href` attribute, and a button tag based on the presence of an `onclick` or `button` attribute. Otherwise, it will render a div.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-item>
@@ -494,7 +497,7 @@ Item should now be written as an `<ion-item>` element. Ionic will determine when
 </a>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-item>
@@ -540,7 +543,7 @@ These have been renamed to the following:
 | `item-right`, `item-end`  | `slot="end"`   | Positions to the right of the item in LTR, and to the left in RTL.  |
 
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-item>
@@ -556,7 +559,7 @@ These have been renamed to the following:
 </ion-item>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-item>
@@ -570,7 +573,7 @@ These have been renamed to the following:
 
 The attributes to show/hide the detail arrows on items have been converted to a single property and value. Instead of writing `detail-push` or `detail-none` to show/hide the arrow, it should be written `detail`/`detail="true"` or `detail="false"`.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <button ion-item detail-none>
@@ -582,7 +585,7 @@ The attributes to show/hide the detail arrows on items have been converted to a 
 </ion-item>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-item button detail="false">
@@ -630,7 +633,7 @@ These values have been renamed to `"start"` and `"end"` to better align with our
 
 The option component should not be written as a `button` with an `ion-button` directive anymore. It should be written as an `ion-item-option`. This will render a native button element inside of it.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-item-sliding>
@@ -645,7 +648,7 @@ The option component should not be written as a `button` with an `ion-button` di
 </ion-item-sliding>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-item-sliding>
@@ -683,7 +686,7 @@ Previously an `ion-label` would automatically get added to an `ion-list-header` 
 
 The `menuToggle` attribute should not be added to an element anymore. Elements that should toggle a menu should be wrapped in an `ion-menu-toggle` element.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <button ion-button menuToggle>
@@ -691,7 +694,7 @@ The `menuToggle` attribute should not be added to an element anymore. Elements t
 </button>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-menu-toggle>
@@ -715,7 +718,7 @@ The `getActiveChildNavs` method has been renamed to `getChildNavs`.
 
 The `<ion-navbar>` component has been removed in favor of always using an `<ion-toolbar>` with an added back button:
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-navbar>
@@ -723,7 +726,7 @@ The `<ion-navbar>` component has been removed in favor of always using an `<ion-
 </ion-navbar>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-toolbar>
@@ -742,7 +745,7 @@ See the [back button](#back-button) changes for more information.
 
 Select's option element should now be written as `<ion-select-option>`. This makes it more obvious that the element should only be used with a Select.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-select>
@@ -752,7 +755,7 @@ Select's option element should now be written as `<ion-select-option>`. This mak
 </ion-select>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-select>
@@ -772,7 +775,7 @@ The class has been renamed from `Option` to `SelectOption` to keep it consistent
 
 Previously radio was positioned inside of an item automatically or by using `item-left`/`item-right`. It is now required to have a `slot` to be positioned properly.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-item>
@@ -791,7 +794,7 @@ Previously radio was positioned inside of an item automatically or by using `ite
 </ion-item>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-item>
@@ -814,7 +817,7 @@ Previously radio was positioned inside of an item automatically or by using `ite
 
 Radio group has been changed to an element. It should now be wrapped around any `<ion-radio>` elements as `<ion-radio-group>`.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-list radio-group>
@@ -835,7 +838,7 @@ Radio group has been changed to an element. It should now be wrapped around any 
 </ion-list>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-list>
@@ -873,7 +876,7 @@ These have been renamed to the following:
 | `range-right`, `range-end`  | `slot="end"`   | Positions to the right of the range in LTR, and to the left in RTL.   |
 
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-range>
@@ -887,7 +890,7 @@ These have been renamed to the following:
 </ion-range>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-range>
@@ -906,7 +909,7 @@ The markup hasn't changed for Segments, but now writing `<ion-segment-button>` w
 
 The `selectOptions` property was renamed to `interfaceOptions` since it directly correlates with the `interface` property.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-select [selectOptions]="customOptions">
@@ -921,7 +924,7 @@ this.customOptions = {
 };
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-select [interfaceOptions]="customOptions">
@@ -942,7 +945,7 @@ this.customOptions = {
 
 The `ios` and `ios-small` spinner's have been renamed to `lines` and `lines-small`, respectively. This also applies to any components that use spinner: `ion-loading`, `ion-infinite-scroll`, `ion-refresher`.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-spinner name="ios"></ion-spinner>
@@ -950,7 +953,7 @@ The `ios` and `ios-small` spinner's have been renamed to `lines` and `lines-smal
 <ion-spinner name="ios-small"></ion-spinner>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-spinner name="lines"></ion-spinner>
@@ -968,7 +971,7 @@ Some properties in `ion-tab` changed:
 - [tabBadge] -> [badge]
 - [tabBadgeStyle] -> [badgeStyle]
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-tabs>
@@ -977,7 +980,7 @@ Some properties in `ion-tab` changed:
 </ion-tabs>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-tabs>
@@ -993,7 +996,7 @@ Some properties in `ion-tab` changed:
 
 Typography should now be written as an `<ion-text>` element. Previously the `ion-text` attribute could be added to any HTML element to set its color. It should now be used as a wrapper around the HTML elements to style.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <h1 ion-text color="secondary">H1: The quick brown fox jumps over the lazy dog</h1>
@@ -1010,7 +1013,7 @@ Typography should now be written as an `<ion-text>` element. Previously the `ion
 </p>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-text color="secondary">
@@ -1042,7 +1045,7 @@ Previously all `scss` files in the `src` directory were imported. Now each `scss
 
 This means that any styles wrapped with a page should now be removed since they will automatically be scoped to the component.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```scss
 page-schedule {
@@ -1052,7 +1055,7 @@ page-schedule {
 }
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```scss
 p {
@@ -1065,14 +1068,14 @@ p {
 
 Sass variables for changing the cordova statusbar have been renamed to app:
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```css
 $cordova-ios-statusbar-padding:   20px;
 $cordova-md-statusbar-padding:    20px;
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```css
 $app-ios-statusbar-padding:   20px;
@@ -1086,7 +1089,7 @@ $app-md-statusbar-padding:    20px;
 
 Previously if a `menuToggle` directive was added to an Ionic `button` in a toolbar, it would be positioned outside of the `ion-buttons` element. Since menu toggle is simply a wrapper to a button now, it should be placed inside of the `ion-buttons` element.
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-toolbar>
@@ -1097,7 +1100,7 @@ Previously if a `menuToggle` directive was added to an Ionic `button` in a toolb
 </ion-toolbar>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-toolbar>
@@ -1125,7 +1128,7 @@ These have been renamed to the following:
 | `left`       | `slot="start"`     | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
 | `right`      | `slot="end"`       | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
 
-**Old Usage Example:**
+**ตัวอย่างการใช้งานแบบเก่า:**
 
 ```html
 <ion-toolbar>
@@ -1149,7 +1152,7 @@ These have been renamed to the following:
 </ion-toolbar>
 ```
 
-**New Usage Example:**
+**ตัวอย่างการใช้งานแบบใหม่:**
 
 ```html
 <ion-toolbar>
