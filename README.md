@@ -1,3 +1,5 @@
+ionic/angular/BREAKING_thai.md
+
 # Ionic
 
 [Ionic](https://ionicframework.com/) is the open-source mobile app development framework that makes it easy to
